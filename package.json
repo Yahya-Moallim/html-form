@@ -1,0 +1,16 @@
+{
+	"name": "Merchants testing app",
+	"version": "1.0.0",
+	"description": "webapp for testing the merchants integration",
+	"source": "index.html",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build"
+	},
+	"keywords": [],
+	"author": "Dinero Pay",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.9.3"
+	}
+}
