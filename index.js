@@ -10,7 +10,8 @@ const currency = document.querySelector("#currency");
 const description = document.querySelector("#description");
 const success_url = document.querySelector("#success_url");
 const button = document.querySelector("#randomData");
-const hash = document.querySelector("#hash");
+const submit = document.querySelector("#submit");
+const password = document.querySelector("#password");
 
 /*  end of targeting the input fields */
 
@@ -37,7 +38,6 @@ function genRandom(e) {
 	operation.value = "purchase";
 	currency.value = "SAR";
 }
-button.addEventListener("click", genRandom);
 
 let ranOrderId = () => {
 	let orderId = (Math.random() + 1).toString(36).substring(7);
@@ -50,5 +50,47 @@ const genHash = (password, orderId, amt, desc) => {
 	const to_md5 = (orderId + amt + curr + desc + password).toUpperCase();
 	const hash = crypto.SHA1(crypto.MD5(to_md5));
 	const result = crypto.enc.Hex.stringify(hash);
+	console.log(result);
 	return result;
 };
+
+async function sendReq(e) {
+	e.preventDefault();
+	let reqObject = {
+		merchant_key: testMer,
+		operation: operation.value,
+		order: {
+			number: "2343",
+			amount: "22",
+			currency: currency.value,
+			description: "test gift",
+		},
+		success_url: success_url.value,
+		hash: genHash(testPass, "2343", "22.22", "test gift"),
+	};
+	const url = "https://checkout.dineropay.com/api/v1/session";
+	try {
+		const response = await fetch(url, {
+			method: "POST", // *GET, POST, PUT, DELETE, etc.
+			mode: "cors", // no-cors, *cors, same-origin
+			credentials: "omit", // include, *same-origin, omit
+			// cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+			headers: {
+				"Content-Type": "application/json",
+				// 'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			referrerPolicy: "no-referrer",
+			body: JSON.stringify(reqObject), // body data type must match "Content-Type" header
+		});
+		// let data = await response.json();
+		// console.log(data);
+	} catch (err) {
+		console.log("this the error", err);
+	}
+}
+
+let testMer = "e71049e0-f972-11ed-9654-0e5e4ac98497";
+let testPass = "499120cefc15709bdd5a14a1ad6cc810";
+
+button.addEventListener("click", genRandom);
+submit.addEventListener("click", sendReq);

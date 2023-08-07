@@ -1,6 +1,6 @@
 {
 	"name": "Merchants_testing_app",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "webapp for testing the merchants integration",
 	"source": "index.html",
 	"scripts": {

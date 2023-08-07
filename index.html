@@ -11,10 +11,10 @@
 				<legend>Authentication Request</legend>
 				<label for="merchant_key">merchant_key:</label>
 				<input type="text" id="merchant_key" name="merchant_key" />
-				<label for="passord">Password</label>
+				<label for="password">Password</label>
 				<input type="text" id="password" name="password" />
 				<label for="operation">operation:</label>
-				<input type="text" id="operation" disabled name="operation" value="purchase" />
+				<input type="text" value="purchase" disabled id="operation" name="operation" />
 				<label for="number">order number:</label>
 				<input type="text" id="number" name="number" />
 				<label for="amount">amount:</label>
@@ -25,9 +25,7 @@
 				<input type="text" id="description" name="description" />
 				<label for="success_url">success_url:</label>
 				<input type="text" id="success_url" name="success_url" />
-				<label for="hash">hash:</label>
-				<input type="text" id="hash" name="hash" /><br />
-				<input type="submit" value="send request" />
+				<input type="submit" id="submit" value="send request" />
 				<button id="randomData">Random Data</button>
 			</fieldset>
 		</form>
