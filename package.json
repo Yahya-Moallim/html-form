@@ -1,6 +1,6 @@
 {
-	"name": "Merchants testing app",
-	"version": "1.0.0",
+	"name": "Merchants_testing_app",
+	"version": "0.0.1",
 	"description": "webapp for testing the merchants integration",
 	"source": "index.html",
 	"scripts": {
@@ -12,5 +12,8 @@
 	"license": "ISC",
 	"devDependencies": {
 		"parcel": "^2.9.3"
+	},
+	"dependencies": {
+		"crypto-js": "^4.1.1"
 	}
 }

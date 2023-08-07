@@ -44,14 +44,17 @@ input[type="number"] {
 	width: 15em;
 }
 
-input[type="submit"] {
+input[type="submit"],
+#randomData {
+	border: 0px;
 	padding: 0.5em 1em;
 	border-radius: 6px;
-	background-color: #333;
+	background-color: #7cb9e8;
 	color: #fff;
 	font-family: "Lato", sans-serif;
 	font-size: 0.8em;
 	margin-top: 1em;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 430px) {
