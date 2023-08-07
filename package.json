@@ -1,5 +1,5 @@
 {
-	"name": "Merchants testing app",
+	"name": "Merchants_testing_app",
 	"version": "1.0.0",
 	"description": "webapp for testing the merchants integration",
 	"source": "index.html",
@@ -12,5 +12,8 @@
 	"license": "ISC",
 	"devDependencies": {
 		"parcel": "^2.9.3"
+	},
+	"dependencies": {
+		"crypto-js": "^4.1.1"
 	}
 }
